@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    
+<h1>Center Games</h1>
+    
+<%= render :partial => "layouts/menu_principal"%>
+
+<p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
 
