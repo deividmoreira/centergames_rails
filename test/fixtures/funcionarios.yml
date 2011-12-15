@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_rota_cobranca: 1
+  id_cargo: 1
+  endereco: MyString
+  nome: MyString
+  rg: MyString
+  orgao_expedidor: MyString
+  cpf: MyString
+  percentual_gratificacao: 9.99
+  inativo: false
+  motivo_inatividade: MyText
+  obs: MyText
+
+two:
+  id_rota_cobranca: 1
+  id_cargo: 1
+  endereco: MyString
+  nome: MyString
+  rg: MyString
+  orgao_expedidor: MyString
+  cpf: MyString
+  percentual_gratificacao: 9.99
+  inativo: false
+  motivo_inatividade: MyText
+  obs: MyText

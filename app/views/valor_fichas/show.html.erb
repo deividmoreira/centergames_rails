@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @valor_ficha.descricao %>
+</p>
+
+<p>
+  <b>Preco:</b>
+  <%= @valor_ficha.preco %>
+</p>
+
+
+<%= link_to 'Edit', edit_valor_ficha_path(@valor_ficha) %> |
+<%= link_to 'Back', valor_fichas_path %>

@@ -1,0 +1,2 @@
+module TipoMesasHelper
+end

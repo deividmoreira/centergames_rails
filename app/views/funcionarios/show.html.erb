@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id rota cobranca:</b>
+  <%= @funcionario.id_rota_cobranca %>
+</p>
+
+<p>
+  <b>Id cargo:</b>
+  <%= @funcionario.id_cargo %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @funcionario.endereco %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @funcionario.nome %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%= @funcionario.rg %>
+</p>
+
+<p>
+  <b>Orgao expedidor:</b>
+  <%= @funcionario.orgao_expedidor %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @funcionario.cpf %>
+</p>
+
+<p>
+  <b>Percentual gratificacao:</b>
+  <%= @funcionario.percentual_gratificacao %>
+</p>
+
+<p>
+  <b>Inativo:</b>
+  <%= @funcionario.inativo %>
+</p>
+
+<p>
+  <b>Motivo inatividade:</b>
+  <%= @funcionario.motivo_inatividade %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @funcionario.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |
+<%= link_to 'Back', funcionarios_path %>

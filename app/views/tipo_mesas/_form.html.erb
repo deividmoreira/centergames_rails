@@ -1,0 +1,25 @@
+<%= form_for(@tipo_mesa) do |f| %>
+  <% if @tipo_mesa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_mesa.errors.count, "error") %> prohibited this tipo_mesa from being saved:</h2>
+
+      <ul>
+      <% @tipo_mesa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

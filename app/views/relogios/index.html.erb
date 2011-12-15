@@ -1,0 +1,23 @@
+<h1>Listing relogios</h1>
+
+<table>
+  <tr>
+    <th>Numero</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @relogios.each do |relogio| %>
+  <tr>
+    <td><%= relogio.numero %></td>
+    <td><%= link_to 'Show', relogio %></td>
+    <td><%= link_to 'Edit', edit_relogio_path(relogio) %></td>
+    <td><%= link_to 'Destroy', relogio, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Relogio', new_relogio_path %>

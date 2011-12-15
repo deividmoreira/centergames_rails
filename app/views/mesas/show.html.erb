@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Relógio:</b>
+  <%= @mesa.id_relogio %>
+</p>
+
+<p>
+  <b>Tipo de mesa:</b>
+  <%= @mesa.id_tipomesa %>
+</p>
+
+<p>
+  <b>Data cadastro:</b>
+  <%= @mesa.created_at %>
+</p>
+
+<p>
+  <b>Mesa inativa:</b>
+  <%= @mesa.mesa_inativa %>
+</p>
+
+<p>
+  <b>Motivo inatividade:</b>
+  <%= @mesa.motivo_inatividade %>
+</p>
+
+<p>
+  <b>Observações:</b>
+  <%= @mesa.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_mesa_path(@mesa) %> |
+<%= link_to 'Back', mesas_path %>

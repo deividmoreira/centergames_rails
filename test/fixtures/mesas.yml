@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_relogio: 1
+  id_tipomesa: 1
+  id_funcionario: 1
+  mesa_inativa: false
+  motivo_inatividade: MyText
+  obs: MyText
+
+two:
+  id_relogio: 1
+  id_tipomesa: 1
+  id_funcionario: 1
+  mesa_inativa: false
+  motivo_inatividade: MyText
+  obs: MyText

@@ -1,0 +1,39 @@
+<%= form_for(@mesa) do |f| %>
+  <% if @mesa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mesa.errors.count, "error") %> prohibited this mesa from being saved:</h2>
+
+      <ul>
+      <% @mesa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Relógio %><br />
+    <%= f.collection_select(:id_relogio, Relogio.order(:numero),
+        :id, :numero, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_mesa %><br />
+    <%= f.collection_select(:id_tipomesa, TipoMesa.order(:tipo),
+        :id, :tipo, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :mesa_inativa %><br />
+    <%= f.check_box :mesa_inativa %>
+  </div>
+  <div class="field">
+    <%= f.label :motivo_inatividade %><br />
+    <%= f.text_area :motivo_inatividade %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

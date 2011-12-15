@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @tipo_mesa.tipo %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @tipo_mesa.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_mesa_path(@tipo_mesa) %> |
+<%= link_to 'Back', tipo_mesas_path %>
