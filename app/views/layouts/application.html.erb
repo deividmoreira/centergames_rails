@@ -2,19 +2,31 @@
 <html>
 <head>
   <title>Centergames</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "reset", "application"  %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    
-<h1>Center Games</h1>
-    
-<%= render :partial => "layouts/menu_principal"%>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
-
+<div id="all">
+    <div id="header">
+        <%= render :partial => "layouts/menu_principal"%>
+    </div><!-- Fim header -->
+    <div id="page">
+        <!--
+        <div class="message message-sucess">Operação realizada com sucesso!</div>
+        <div class="message message-info">Este usuário já tem cadastro anterior.</div>
+        <div class="message message-error">Não foi possível excluir o usuário.</div>
+        -->
+        <div class="message <%= flash[:classe]%>"><%= flash[:notice]%></div>
+        <fieldset>
+            <%= yield %>    
+        </fieldset>
+    </div><!-- Fim page -->
+    <div id="footer">
+        <p>
+            Conteúdo Footer
+        </p>
+    </div><!-- Fim footer -->     
+</div><!-- Fim all -->
 </body>
 </html>

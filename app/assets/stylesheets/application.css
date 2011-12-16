@@ -1,34 +1,316 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree . 
-*/
+html, body {
+    height: 100%;
+    font-family: arial, verdana;
+}
 
-#menu ul {
-    padding:0px;
-    margin:0px;
-    float: left;
+#all {
+    min-height: 100%;
+}
+
+* html #all {
+    height: 100%; /* hack para IE6 que trata height como min-height */
+}
+
+#all {
+    position: relative;
+    background: #a8a8a8 url(bg.png) repeat-x;
+    bg.png
+}
+#header {
+    background-color: #999;
+}
+#footer {
+    background-color: #999;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    background-color:#EDEDED;
-    list-style:none;
+    height: 30px;
+    margin-top: -30px;
+    background-image: url(bg-menu.png);
+    border-top: 2px solid #666;
 }
 
-#menu ul li { display: inline; }
+#footer p {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
 
-#menu ul li a {
-    padding: 2px 10px;
-    float:left;
-    /* visual do link */
-    background-color:#EDEDED;
-    color: #333;
+#page {
+    padding-bottom:30px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+
+/* Menu drop-down horizontal */
+#nav {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    zoom: 1;
+    width: 100%;
+    background: url(bg-menu.png);
+    height: 39px;
+    margin-bottom: 30px; 
+    border-bottom: 2px solid #555;
+}
+#nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+#nav li {
+    position: relative;
+    line-height: 1.2em;
+    vertical-align: top
+}
+#nav a {
+    display: block;
+    zoom: 1;
+    line-height: 2.45em;
     text-decoration: none;
-    border-bottom:3px solid #EDEDED;
+    color: #333;
+    font-family: arial;
+    text-shadow: 1px 1px 1px #CCC;
+    padding: 0 10px 0 30px;
+    width: 110px;
+}
+#nav li ul {
+    position: absolute;
+    visibility: hidden
+}
+#nav li:hover ul, #nav li.hover ul {
+    visibility: visible
+}
+#nav li:hover ul ul, #nav li.hover ul ul {
+    visibility: hidden
+}
+#nav li li:hover ul, #nav li li.hover ul {
+    visibility: visible
+}
+#nav li li:hover ul ul, #nav li li.hover ul ul {
+    visibility: hidden
+}
+#nav li li li:hover ul, #nav li li li.hover ul {
+    visibility: visible
+}
+/* caracterÃ­sticas horizontal */
+#nav:after, #nav.after {
+    content: ".";
+    line-height: 0px;
+    clear: both;
+    display: block;
+    visibility: hidden
+}
+#nav li {
+    float: left;
+}
+#nav li ul li {
+    float: none;
+}
+#nav li ul li ul {
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    border-left: 1px solid #999;
+}
+#nav li {
+    background: url(separator.png)  right no-repeat;
+}
+#nav ul li {
+    background: url(separator.png)  right no-repeat;
+}
+#nav ul li:nth-child(1) {
+    background: none;
+}
+#nav ul li ul li {
+    background-image: none;
+}
+#nav li a:hover {
+    background: url(bg-menu-hover.png);
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
 }
 
-#menu ul li a:hover {
-    background-color:#D6D6D6;
-    color: #6D6D6D;
-    border-bottom:3px solid #EA0000;
+#nav ul li ul {
+    background: #848484;
+}
+#nav ul li ul li {
+    border-bottom: #ccc solid 1px;
+}
+#nav ul li ul li a:hover {
+    background: #d87f30;
+}
+
+#title{
+    display: block;
+    float: left;
+    background: url(logo.png) no-repeat;
+    text-indent: -99999px;
+    width: 115px;
+    height: 57px;
+    margin: 2px 20px 10px 30px;
+}
+
+
+
+/* Estilos Gerais de página */
+fieldset{
+    border: 1px solid #999;
+    padding: 15px;
+    background: #FEFEFE;
+        -moz-border-radius: 5px!important;
+    -webkit-border-radius: 5px!important;
+    -khtml-border-radius: 5px!important;
+    border-radius: 5px!important;
+}
+fieldset legend{
+    padding: 0 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+fieldset h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #E36000;
+    text-shadow: 1px 1px 1px #999;
+    border-bottom: 1px solid #777;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+table{
+    width: 100%;
+}
+
+/* table
+----------------------------------------------- */
+table {
+    width:100%;
+    border:0px solid #bbb;
+    margin-bottom:10px;
+}
+
+col.colC {
+    width:8em;
+}
+th, td {
+    padding:.5em 1em;
+    text-align:left;
+}
+thead th {
+    border-bottom:1px solid #ccc;
+    padding:.4em 1em .2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    background:#fefefe;
+    line-height: 1.5em;
+}
+thead th.table-head {
+    font-size:1em;
+    font-weight:normal;
+    text-transform:uppercase;
+    color:#fff;
+    background:#555;
+    border:1px solid #555;
+}
+
+tbody th, tbody td {
+    border-bottom:1px solid #eee;
+    background:#f6f6f6;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {
+    background:#fefefe;
+}
+
+thead tr th:nth-last-child(1){
+    text-align: center;
+}
+tbody tr td:nth-last-child(1){
+    text-align: right;
+}
+
+tbody tr.odd th,
+tbody tr.odd td {
+    background:#fff;
+}
+tfoot th,
+tfoot td {
+    border-top:1px solid #ccc;
+    background:#eee;
+    text-align: center;
+}
+tfoot th a,
+tfoot td a{
+    text-decoration: underline;
+}
+tfoot tr.total th,
+tfoot tr.total td {
+    border-top:6px double #666;
+}
+tfoot tr.total th {
+    text-transform:uppercase;
+}
+th.currency,
+td.currency {
+    text-align:right;
+}
+
+.message{
+    padding: 9px 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px dashed #666;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.message-sucess{
+    background-color: #daffd6;
+    border-color: #649e61;
+    color: #074600;
+}
+.message-info{
+    background-color: #bdc5ff;
+    border-color: #474c76;
+    color: #000046;
+}
+.message-error{
+    background-color: #d0a5a5;
+    border-color: #823333;
+    color: #460000;
+}
+
+a{
+    color:#e36000;
+    text-decoration: none;
+}
+a:hover{
+    color:#1b00e3;
+    text-decoration: underline;
+}
+
+.link-button{
+    border: 1px solid #CCC;
+    padding: 9px 17px;
+    background: #EFEFEF;
+    margin-bottom: -20px;
+    margin-top: -55px;
+    float: right;
+    color: #555;
+    font-size: 0.8em;
+}
+
+.link-button:hover{
+    text-decoration: none;
+    color: #222;
+    border-color: #555;
+    background: #f2f2f2;
 }

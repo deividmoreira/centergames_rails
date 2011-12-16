@@ -44,7 +44,7 @@ class MesasController < ApplicationController
     
     respond_to do |format|
       if @mesa.save
-        format.html { redirect_to @mesa, notice: 'Mesa criada com sucesso.' }
+        format.html { redirect_to @mesa, notice: 'Mesa criada com sucesso.', classe: 'message-sucess' }
         format.json { render json: @mesa, status: :created, location: @mesa }
       else
         format.html { render action: "new" }

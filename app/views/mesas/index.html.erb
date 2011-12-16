@@ -1,6 +1,7 @@
-<h1>Listagem de mesas</h1>
-
+<h2>Mesas</h2>
+<%= link_to 'Nova Mesa', new_mesa_path, :class => 'link-button'%>
 <table>
+<thead>    
   <tr>
     <th>Relógio</th>
     <th>Tipo de mesa</th>
@@ -9,25 +10,28 @@
     <th>Motivo inatividade</th>
     <th>Observações</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
-
-<% @mesas.each do |mesa| %>
-  <tr>
-    <td><%= mesa.id_relogio %></td>
-    <td><%= mesa.id_tipomesa %></td>
-    <td><%= mesa.created_at %></td>
-    <td><%= mesa.mesa_inativa %></td>
-    <td><%= mesa.motivo_inatividade %></td>
-    <td><%= mesa.obs %></td>
-    <td><%= link_to 'Mostrar', mesa %></td>
-    <td><%= link_to 'Editar', edit_mesa_path(mesa) %></td>
-    <td><%= link_to 'Excluir', mesa, confirm: 'Confirma exclusão?', method: :delete %></td>
-  </tr>
-<% end %>
+</thead>  
+<tfoot></tfoot>
+<tbody>
+    <% @mesas.each do |mesa| %>
+      <tr>
+        <td><%= mesa.id_relogio %></td>
+        <td><%= mesa.id_tipomesa %></td>
+        <td><%= mesa.created_at %></td>
+        <td><%= mesa.mesa_inativa %></td>
+        <td><%= mesa.motivo_inatividade %></td>
+        <td><%= mesa.obs %></td>
+        <td>
+            <%= link_to 'Mostrar', mesa %>
+            <%= link_to 'Editar', edit_mesa_path(mesa) %>
+            <%= link_to 'Excluir', mesa, confirm: 'Confirma exclusão?', method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+</tbody>
 </table>
 
-<br />
 
-<%= link_to 'Nova Mesa', new_mesa_path %>
+
+
