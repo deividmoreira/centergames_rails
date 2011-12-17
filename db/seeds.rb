@@ -15,6 +15,25 @@ rotas = Rotum.create([
   {rota: 'FORTALEZA ZINHO', ativo: true},
   {rota: 'RUSSAS', ativo: true},
   ])
+  
+tipoMesa = TipoMesa.create([
+  {tipo: 'MESA PEQUENA'},
+  {tipo: 'MESA MEDIA'}, 
+  {tipo: 'MESA GRANDE'},
+  {tipo: 'PEDRA'},
+  {tipo: 'MESA'},
+  {tipo: '2,20'},
+  {tipo: 'MUSICAL'},
+  {tipo: 'VIDEO GAME'},
+  {tipo: 'NEO GEO - KOF 97'},
+  {tipo: 'X-MEN VS SF'},
+  {tipo: 'NEO GEO - KOF 2002'},
+  {tipo: 'NEO GEO - KOF 2000'},
+  {tipo: 'NEO GEO - KOF 97 PLUS'},
+  {tipo: 'NEO GEO - KOF 2001'},
+  {tipo: 'PLAYSTATION - FUTEBOL'},
+  {tipo: 'MARVEL VS CAPCON'}
+])  
 =begin
 INSERT INTO "ROTA"
   ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")

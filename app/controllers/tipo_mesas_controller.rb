@@ -2,8 +2,7 @@ class TipoMesasController < ApplicationController
   # GET /tipo_mesas
   # GET /tipo_mesas.json
   def index
-    @tipo_mesas = TipoMesa.all
-
+    @tipo_mesas = TipoMesa.paginate :page => params[:page], :per_page => 10
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tipo_mesas }

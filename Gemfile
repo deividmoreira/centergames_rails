@@ -9,6 +9,7 @@ gem 'pg'
 gem 'therubyracer'
 gem 'execjs'
 gem 'i18n'
+gem 'will_paginate'
 
 
 # Gems used only for assets and not required

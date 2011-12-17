@@ -1,25 +1,24 @@
-<h1>Listing tipo_mesas</h1>
-
+<h2>Tipos de mesas</h2>
+<%= link_to 'Novo Tipo mesa', new_tipo_mesa_path, :class => 'link-button' %>
 <table>
-  <tr>
-    <th>Tipo</th>
-    <th>Obs</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tipo_mesas.each do |tipo_mesa| %>
-  <tr>
-    <td><%= tipo_mesa.tipo %></td>
-    <td><%= tipo_mesa.obs %></td>
-    <td><%= link_to 'Show', tipo_mesa %></td>
-    <td><%= link_to 'Edit', edit_tipo_mesa_path(tipo_mesa) %></td>
-    <td><%= link_to 'Destroy', tipo_mesa, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+	<thead>
+	  <tr>
+	    <th>Tipo</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @tipo_mesas.each do |tipo_mesa| %>
+		  <tr>
+		    <td><%= tipo_mesa.tipo %></td>
+		    <td>
+		    	<%= link_to 'Show', tipo_mesa %>
+		    	<%= link_to 'Edit', edit_tipo_mesa_path(tipo_mesa) %>
+		    	<%= link_to 'Destroy', tipo_mesa, confirm: 'Are you sure?', method: :delete %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Tipo mesa', new_tipo_mesa_path %>
+<%= will_paginate @tipo_mesas %>
