@@ -5,8 +5,6 @@
 	  <tr>
 	    <th>Numero</th>
 	    <th></th>
-	    <th></th>
-	    <th></th>
 	  </tr>
 	</thead>
 	<tfoot></tfoot>
@@ -14,9 +12,11 @@
 		<% @relogios.each do |relogio| %>
 		  <tr>
 		    <td><%= relogio.numero %></td>
-		    <td><%= link_to 'Show', relogio %></td>
-		    <td><%= link_to 'Edit', edit_relogio_path(relogio) %></td>
-		    <td><%= link_to 'Destroy', relogio, confirm: 'Are you sure?', method: :delete %></td>
+		    <td>
+		    	<%= link_to 'Show', relogio %>
+		    	<%= link_to 'Edit', edit_relogio_path(relogio) %>
+		    	<%= link_to 'Destroy', relogio, confirm: 'Are you sure?', method: :delete %>
+		    </td>
 		  </tr>
 		<% end %>
 	</tbody>

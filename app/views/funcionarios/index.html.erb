@@ -1,20 +1,11 @@
-<h1>Listing funcionarios</h1>
-
+<h2>Funcionários</h2>
+<%= link_to 'Novo Funcionário', new_funcionario_path, :class => 'link-button' %>
 <table>
   <tr>
     <th>Id rota cobranca</th>
     <th>Id cargo</th>
-    <th>Endereco</th>
     <th>Nome</th>
-    <th>Rg</th>
-    <th>Orgao expedidor</th>
-    <th>Cpf</th>
     <th>Percentual gratificacao</th>
-    <th>Inativo</th>
-    <th>Motivo inatividade</th>
-    <th>Obs</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -22,22 +13,17 @@
   <tr>
     <td><%= funcionario.id_rota_cobranca %></td>
     <td><%= funcionario.id_cargo %></td>
-    <td><%= funcionario.endereco %></td>
     <td><%= funcionario.nome %></td>
-    <td><%= funcionario.rg %></td>
-    <td><%= funcionario.orgao_expedidor %></td>
-    <td><%= funcionario.cpf %></td>
     <td><%= funcionario.percentual_gratificacao %></td>
-    <td><%= funcionario.inativo %></td>
-    <td><%= funcionario.motivo_inatividade %></td>
-    <td><%= funcionario.obs %></td>
-    <td><%= link_to 'Show', funcionario %></td>
-    <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
-    <td><%= link_to 'Destroy', funcionario, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+    	<%= link_to 'Mostrar', funcionario %>
+    	<%= link_to 'Editar', edit_funcionario_path(funcionario) %>
+    	<%= link_to 'Excluir', funcionario, confirm: 'Confirma exclusão?', method: :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Funcionario', new_funcionario_path %>
+

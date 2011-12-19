@@ -1,11 +1,9 @@
-<h1>Listing rota</h1>
+<h2>Rotas</h2>
 
 <table>
   <tr>
     <th>Rota</th>
     <th>Ativo</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -13,9 +11,11 @@
   <tr>
     <td><%= rotum.rota %></td>
     <td><%= rotum.ativo %></td>
-    <td><%= link_to 'Show', rotum %></td>
-    <td><%= link_to 'Edit', edit_rotum_path(rotum) %></td>
-    <td><%= link_to 'Destroy', rotum, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+    	<%= link_to 'Mostrar', rotum %>
+    	<%= link_to 'Editar', edit_rotum_path(rotum) %>
+    	<%= link_to 'Excluir', rotum, confirm: 'Are you sure?', method: :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

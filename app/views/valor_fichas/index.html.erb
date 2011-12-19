@@ -1,11 +1,9 @@
-<h1>Listing valor_fichas</h1>
+<h2>Valor das fichas</h2>
 
 <table>
   <tr>
     <th>Descricao</th>
     <th>Preco</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -13,9 +11,11 @@
   <tr>
     <td><%= valor_ficha.descricao %></td>
     <td><%= valor_ficha.preco %></td>
-    <td><%= link_to 'Show', valor_ficha %></td>
-    <td><%= link_to 'Edit', edit_valor_ficha_path(valor_ficha) %></td>
-    <td><%= link_to 'Destroy', valor_ficha, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+    	<%= link_to 'Mostrar', valor_ficha %>
+    	<%= link_to 'Editar', edit_valor_ficha_path(valor_ficha) %>
+    	<%= link_to 'Excluir', valor_ficha, confirm: 'Confirma exclusão?', method: :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
