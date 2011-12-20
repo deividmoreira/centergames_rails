@@ -7,4 +7,8 @@ class CreateTipoMesas < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  def self.down
+    drop_table :tipos_mesas
+  end
 end

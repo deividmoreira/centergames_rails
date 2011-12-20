@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :Relógio %><br />
-    <%= f.collection_select(:id_relogio, Relogio.order(:numero),
+    <%= f.collection_select(:relogio_id, Relogio.order(:numero),
         :id, :numero, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :tipo_de_mesa %><br />
-    <%= f.collection_select(:id_tipomesa, TipoMesa.order(:tipo),
+    <%= f.collection_select(:tipomesa_id, TipoMesa.order(:tipo),
         :id, :tipo, {:prompt => true}) %>
   </div>
   <div class="field">

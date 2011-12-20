@@ -14,9 +14,9 @@ class MesasController < ApplicationController
   # GET /mesas/1.json
   def show
     @mesa = Mesa.find(params[:id])
-
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @mesa }
     end
   end

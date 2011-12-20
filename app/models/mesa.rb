@@ -1,5 +1,8 @@
 class Mesa < ActiveRecord::Base
-  has_one :relogio
-  validates_presence_of :id_tipomesa
-  validates_presence_of :id_relogio
+  belongs_to :relogio
+  belongs_to :tipo_mesa
+  validates_associated :relogio
+  validates_associated :tipo_mesa
+  validates_presence_of :tipomesa_id
+  validates_presence_of :relogio_id
 end

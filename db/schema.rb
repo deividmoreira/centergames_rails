@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20111215194155) do
   end
 
   create_table "mesas", :force => true do |t|
-    t.integer  "id_relogio"
-    t.integer  "id_tipomesa"
+    t.integer  "relogio_id"
+    t.integer  "tipomesa_id"
     t.boolean  "mesa_inativa"
     t.text     "motivo_inatividade"
     t.text     "obs"

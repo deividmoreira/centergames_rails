@@ -16,7 +16,7 @@
 <tbody>
     <% @mesas.each do |mesa| %>
       <tr>
-        <td><%= mesa.id_relogio %></td>
+        <td><%= mesa.relogio.numero %></td>
         <td><%= mesa.id_tipomesa %></td>
         <td><%= mesa.created_at %></td>
         <td><%= mesa.mesa_inativa %></td>

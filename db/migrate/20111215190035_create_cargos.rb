@@ -6,4 +6,8 @@ class CreateCargos < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  def self.down
+    drop_table :cargos
+  end
 end
