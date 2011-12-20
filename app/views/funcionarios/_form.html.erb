@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :rota %><br />
-    <%= f.collection_select(:id_rota_cobranca, Rotum.order(:rota),
-        :id, :rota, {:prompt => true}) %>
+    <%= f.collection_select(:rota_id, Rota.order(:nome),
+        :id, :nome, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :cargo %><br />
-    <%= f.collection_select(:id_cargo, Cargo.order(:nome),
+    <%= f.collection_select(:cargo_id, Cargo.order(:nome),
         :id, :nome, {:prompt => true}) %>
   </div>
   <div class="field">

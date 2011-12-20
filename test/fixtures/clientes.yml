@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  endereco: MyString
+  rg: MyString
+  orgao_expedidor: MyString
+  cpf: MyString
+  cgc: MyString
+  irregular: false
+  motivo_irregularidade: MyText
+  obs: MyText
+
+two:
+  nome: MyString
+  endereco: MyString
+  rg: MyString
+  orgao_expedidor: MyString
+  cpf: MyString
+  cgc: MyString
+  irregular: false
+  motivo_irregularidade: MyText
+  obs: MyText

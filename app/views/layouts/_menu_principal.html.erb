@@ -3,7 +3,7 @@
         <li><h1 id="title">Center Games</h1></li>
         <li><a href="#">Atividades</a>
             <ul>
-                <li><%= link_to 'Locação de mesas', mesas_path %></li>
+                <li><%= link_to 'Locação', locacoes_path %></li>
             </ul>
         </li>
         <li><a href="#">Relatórios</a>
@@ -13,6 +13,7 @@
         </li>
         <li><a href="#">Cadastro</a> 
             <ul>
+                <li><%= link_to :Clientes, clientes_path %></li>
                 <li><%= link_to :Mesas, mesas_path %></li>
                 <li><%= link_to :Relógios, relogios_path %></li>
                 <li><%= link_to 'Tipos de mesa', tipo_mesas_path %></li>

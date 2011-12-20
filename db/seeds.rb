@@ -6,28 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-rotas = Rotum.create([
-  {rota: 'CRATEUS', ativo: true},
-  {rota: 'SERRA GRANDE', ativo: true},
-  {rota: 'PORANGA', ativo: true},
-  {rota: 'SEMANAL', ativo: true},
-  {rota: 'QUINZENAL FORTALEZA', ativo: true},
-  {rota: 'FORTALEZA ZINHO', ativo: true},
-  {rota: 'RUSSAS', ativo: true},
-  {rota: 'ARACOIABA', ativo: true},
-  {rota: 'ITAPAJE', ativo: true},
-  {rota: 'PENTECOSTE', ativo: true},
-  {rota: 'CANINDE', ativo: true},
-  {rota: 'PEDRA BRANCA', ativo: true},
-  {rota: 'INDEPENDENCIA', ativo: true},
-  {rota: 'MONSENHOR TABOSA', ativo: true},
-  {rota: 'REALEJO', ativo: true},  
-  {rota: 'NOVO ORIENTE', ativo: true},
-  {rota: 'GALPAO', ativo: true},  
-  {rota: 'URUAU', ativo: true},
-  {rota: 'TERESINA', ativo: true},
-  {rota: 'DESTRUIDAS', ativo: true},
-  {rota: 'M. FORTALEZA', ativo: true}
+rotas = Rota.create([
+  {nome: 'CRATEUS', ativo: true},
+  {nome: 'SERRA GRANDE', ativo: true},
+  {nome: 'PORANGA', ativo: true},
+  {nome: 'SEMANAL', ativo: true},
+  {nome: 'QUINZENAL FORTALEZA', ativo: true},
+  {nome: 'FORTALEZA ZINHO', ativo: true},
+  {nome: 'RUSSAS', ativo: true},
+  {nome: 'ARACOIABA', ativo: true},
+  {nome: 'ITAPAJE', ativo: true},
+  {nome: 'PENTECOSTE', ativo: true},
+  {nome: 'CANINDE', ativo: true},
+  {nome: 'PEDRA BRANCA', ativo: true},
+  {nome: 'INDEPENDENCIA', ativo: true},
+  {nome: 'MONSENHOR TABOSA', ativo: true},
+  {nome: 'REALEJO', ativo: true},  
+  {nome: 'NOVO ORIENTE', ativo: true},
+  {nome: 'GALPAO', ativo: true},  
+  {nome: 'URUAU', ativo: true},
+  {nome: 'TERESINA', ativo: true},
+  {nome: 'DESTRUIDAS', ativo: true},
+  {nome: 'M. FORTALEZA', ativo: true}
   ])
 
 tipoMesa = TipoMesa.create([
@@ -51,80 +51,11 @@ tipoMesa = TipoMesa.create([
 
 cargos = Cargo.create([{nome: 'Representante'},{nome: 'Operador'}])
 
-=begin
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(22,'NATAL','05/10/2007 09:19');
+relogios = Relogio.create([{numero: '1'},{numero: '2'},{numero: '3'},{numero: '4'},{numero: '5'}])
 
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(23,'VENDIDAS','05/10/2007 09:52');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(24,'ROUBADA','05/10/2007 10:00');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(26,'CAUCAIA','19/12/2007 17:26');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(25,'MENSAL','18/10/2007 14:46');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(27,'PAULO ROBERTO','19/12/2007 17:32');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(28,'BAIANO','20/12/2007 09:56');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(29,'VIDEO GAME','13/06/2008 13:42');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(30,'UMIRIM','29/05/2008 10:04');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(32,'MUSIC DANCE NATAL','14/07/2008 15:16');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(31,'MUSIC DANCE','13/06/2008 13:42');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(33,'FLIPPER','13/06/2008 16:28');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(34,'SINUCA NATAL','13/06/2008 16:28');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(35,'CAUCAIA GENILDO','02/10/2009 11:25');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(36,'VIDEO GAME ESPECIAL','21/07/2008 15:42');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(37,'CRATEUS OLAVO','11/09/2008 14:58');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(38,'LOJA MESSEJANA','18/11/2008 10:54');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(39,'FLIPER','19/05/2009 10:32');
-
-INSERT INTO "ROTA"
-  ("ROT_IDENTIFICADOR","ROT_DESCRICAO","ROT_INFO_ATUALIZACAO")
-VALUES(40,'WALDIR MUSIC','30/11/2009 18:48');
-=end
+valorFichas = ValorFicha.create([
+  {descricao: 'CIDADE', preco: 0.25},
+  {descricao: 'INTERIOR', preco: 0.2},
+  {descricao: 'FORTALEZA', preco: 0.01},
+  {descricao: 'MUSICAL', preco: 1}
+  ])

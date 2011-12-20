@@ -1,0 +1,53 @@
+<%= form_for(@cliente) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% @cliente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :rg %><br />
+    <%= f.text_field :rg %>
+  </div>
+  <div class="field">
+    <%= f.label :orgao_expedidor %><br />
+    <%= f.text_field :orgao_expedidor %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :cgc %><br />
+    <%= f.text_field :cgc %>
+  </div>
+  <div class="field">
+    <%= f.label :irregular %><br />
+    <%= f.check_box :irregular %>
+  </div>
+  <div class="field">
+    <%= f.label :motivo_irregularidade %><br />
+    <%= f.text_area :motivo_irregularidade %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

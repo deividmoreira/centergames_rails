@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :tipo_de_mesa %><br />
-    <%= f.collection_select(:tipomesa_id, TipoMesa.order(:tipo),
+    <%= f.collection_select(:tipo_mesa_id, TipoMesa.order(:tipo),
         :id, :tipo, {:prompt => true}) %>
   </div>
   <div class="field">

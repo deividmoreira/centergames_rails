@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cliente_id: 1
+  funcionario_id: 1
+  mesa_id: 1
+  valor_ficha_id: 1
+  data_locacao: 2011-12-20
+  lucro: 9.99
+  encerrada: false
+  obs: MyText
+
+two:
+  cliente_id: 1
+  funcionario_id: 1
+  mesa_id: 1
+  valor_ficha_id: 1
+  data_locacao: 2011-12-20
+  lucro: 9.99
+  encerrada: false
+  obs: MyText

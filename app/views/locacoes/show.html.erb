@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @locacao.cliente_id %>
+</p>
+
+<p>
+  <b>Funcionario:</b>
+  <%= @locacao.funcionario_id %>
+</p>
+
+<p>
+  <b>Mesa:</b>
+  <%= @locacao.mesa_id %>
+</p>
+
+<p>
+  <b>Valor ficha:</b>
+  <%= @locacao.valor_ficha_id %>
+</p>
+
+<p>
+  <b>Data locacao:</b>
+  <%= @locacao.data_locacao %>
+</p>
+
+<p>
+  <b>Lucro:</b>
+  <%= @locacao.lucro %>
+</p>
+
+<p>
+  <b>Encerrada:</b>
+  <%= @locacao.encerrada %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @locacao.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_locacao_path(@locacao) %> |
+<%= link_to 'Back', locacoes_path %>

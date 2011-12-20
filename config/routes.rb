@@ -1,4 +1,8 @@
 Centergames::Application.routes.draw do
+  resources :locacoes
+
+  resources :clientes
+
   resources :funcionarios
 
   resources :valor_fichas

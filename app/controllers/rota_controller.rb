@@ -2,7 +2,7 @@ class RotaController < ApplicationController
   # GET /rota
   # GET /rota.json
   def index
-    @rota = Rotum.all
+    @rota = Rota.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,42 +13,42 @@ class RotaController < ApplicationController
   # GET /rota/1
   # GET /rota/1.json
   def show
-    @rotum = Rotum.find(params[:id])
+    @rota = Rota.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @rotum }
+      format.json { render json: @rota }
     end
   end
 
   # GET /rota/new
   # GET /rota/new.json
   def new
-    @rotum = Rotum.new
+    @rota = Rota.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @rotum }
+      format.json { render json: @rota }
     end
   end
 
   # GET /rota/1/edit
   def edit
-    @rotum = Rotum.find(params[:id])
+    @rota = Rota.find(params[:id])
   end
 
   # POST /rota
   # POST /rota.json
   def create
-    @rotum = Rotum.new(params[:rotum])
+    @rota = Rota.new(params[:rota])
 
     respond_to do |format|
-      if @rotum.save
-        format.html { redirect_to @rotum, notice: 'Rotum was successfully created.' }
-        format.json { render json: @rotum, status: :created, location: @rotum }
+      if @rota.save
+        format.html { redirect_to @rota, notice: 'rota was successfully created.' }
+        format.json { render json: @rota, status: :created, location: @rota }
       else
         format.html { render action: "new" }
-        format.json { render json: @rotum.errors, status: :unprocessable_entity }
+        format.json { render json: @rota.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +56,15 @@ class RotaController < ApplicationController
   # PUT /rota/1
   # PUT /rota/1.json
   def update
-    @rotum = Rotum.find(params[:id])
+    @rota = rota.find(params[:id])
 
     respond_to do |format|
-      if @rotum.update_attributes(params[:rotum])
-        format.html { redirect_to @rotum, notice: 'Rotum was successfully updated.' }
+      if @rota.update_attributes(params[:rota])
+        format.html { redirect_to @rota, notice: 'rota was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @rotum.errors, status: :unprocessable_entity }
+        format.json { render json: @rota.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,8 +72,8 @@ class RotaController < ApplicationController
   # DELETE /rota/1
   # DELETE /rota/1.json
   def destroy
-    @rotum = Rotum.find(params[:id])
-    @rotum.destroy
+    @rota = rota.find(params[:id])
+    @rota.destroy
 
     respond_to do |format|
       format.html { redirect_to rota_url }

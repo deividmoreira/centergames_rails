@@ -1,5 +1,4 @@
-class Cargo < ActiveRecord::Base
-  
+class Rota < ActiveRecord::Base
   has_one :funcionario
   
   validates_presence_of :nome

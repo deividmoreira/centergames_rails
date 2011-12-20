@@ -1,0 +1,49 @@
+<%= form_for(@locacao) do |f| %>
+  <% if @locacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@locacao.errors.count, "error") %> prohibited this locacao from being saved:</h2>
+
+      <ul>
+      <% @locacao.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cliente_id %><br />
+    <%= f.number_field :cliente_id %>
+  </div>
+  <div class="field">
+    <%= f.label :funcionario_id %><br />
+    <%= f.number_field :funcionario_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mesa_id %><br />
+    <%= f.number_field :mesa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_ficha_id %><br />
+    <%= f.number_field :valor_ficha_id %>
+  </div>
+  <div class="field">
+    <%= f.label :data_locacao %><br />
+    <%= f.date_select :data_locacao %>
+  </div>
+  <div class="field">
+    <%= f.label :lucro %><br />
+    <%= f.text_field :lucro %>
+  </div>
+  <div class="field">
+    <%= f.label :encerrada %><br />
+    <%= f.check_box :encerrada %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

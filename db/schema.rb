@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215194155) do
+ActiveRecord::Schema.define(:version => 20111220193955) do
 
   create_table "cargos", :force => true do |t|
     t.string   "nome"
@@ -19,9 +19,23 @@ ActiveRecord::Schema.define(:version => 20111215194155) do
     t.datetime "updated_at"
   end
 
+  create_table "clientes", :force => true do |t|
+    t.string   "nome"
+    t.string   "endereco"
+    t.string   "rg"
+    t.string   "orgao_expedidor"
+    t.string   "cpf"
+    t.string   "cgc"
+    t.boolean  "irregular"
+    t.text     "motivo_irregularidade"
+    t.text     "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "funcionarios", :force => true do |t|
-    t.integer  "id_rota_cobranca"
-    t.integer  "id_cargo"
+    t.integer  "rota_id"
+    t.integer  "cargo_id"
     t.string   "endereco"
     t.string   "nome"
     t.string   "rg"
@@ -35,9 +49,22 @@ ActiveRecord::Schema.define(:version => 20111215194155) do
     t.datetime "updated_at"
   end
 
+  create_table "locacoes", :force => true do |t|
+    t.integer  "cliente_id"
+    t.integer  "funcionario_id"
+    t.integer  "mesa_id"
+    t.integer  "valor_ficha_id"
+    t.date     "data_locacao"
+    t.decimal  "lucro"
+    t.boolean  "encerrada"
+    t.text     "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mesas", :force => true do |t|
     t.integer  "relogio_id"
-    t.integer  "tipomesa_id"
+    t.integer  "tipo_mesa_id"
     t.boolean  "mesa_inativa"
     t.text     "motivo_inatividade"
     t.text     "obs"
@@ -52,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20111215194155) do
   end
 
   create_table "rota", :force => true do |t|
-    t.string   "rota"
+    t.string   "nome"
     t.boolean  "ativo"
     t.datetime "created_at"
     t.datetime "updated_at"

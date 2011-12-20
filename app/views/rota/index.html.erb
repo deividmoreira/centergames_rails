@@ -1,5 +1,7 @@
 <h2>Rotas</h2>
 
+<%= link_to 'Nova Rota', new_rotum_path, :class => 'link-button' %>
+
 <table>
   <tr>
     <th>Rota</th>
@@ -7,7 +9,7 @@
     <th></th>
   </tr>
 
-<% @rota.each do |rotum| %>
+<% @rotas.each do |rota| %>
   <tr>
     <td><%= rotum.rota %></td>
     <td><%= rotum.ativo %></td>
@@ -22,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New Rotum', new_rotum_path %>
+

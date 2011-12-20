@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @cliente.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @cliente.endereco %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%= @cliente.rg %>
+</p>
+
+<p>
+  <b>Orgao expedidor:</b>
+  <%= @cliente.orgao_expedidor %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @cliente.cpf %>
+</p>
+
+<p>
+  <b>Cgc:</b>
+  <%= @cliente.cgc %>
+</p>
+
+<p>
+  <b>Irregular:</b>
+  <%= @cliente.irregular %>
+</p>
+
+<p>
+  <b>Motivo irregularidade:</b>
+  <%= @cliente.motivo_irregularidade %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @cliente.obs %>
+</p>
+
+
+<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
+<%= link_to 'Back', clientes_path %>

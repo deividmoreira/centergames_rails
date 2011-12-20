@@ -17,7 +17,7 @@
     <% @mesas.each do |mesa| %>
       <tr>
         <td><%= mesa.relogio.numero %></td>
-        <td><%= mesa.id_tipomesa %></td>
+        <td><%= mesa.tipo_mesa.tipo %></td>
         <td><%= mesa.created_at %></td>
         <td><%= mesa.mesa_inativa %></td>
         <td><%= mesa.motivo_inatividade %></td>

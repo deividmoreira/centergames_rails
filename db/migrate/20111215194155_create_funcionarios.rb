@@ -1,8 +1,7 @@
 class CreateFuncionarios < ActiveRecord::Migration
   def change
     create_table :funcionarios do |t|
-      t.integer :id_rota_cobranca
-      t.integer :id_cargo
+      t.references :rota, :cargo
       t.string :endereco
       t.string :nome
       t.string :rg
