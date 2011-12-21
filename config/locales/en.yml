@@ -3,16 +3,3 @@
 
 en:
   hello: "Hello world"
-activerecord:
-    errors:
-      messages:
-        <<: *errors_messages
-      template:
-        <<: *errors_template
-      models:
-        cargo:
-          attributes:
-            nome:
-              blank: "Preencha o campo Nome"
-      full_messages:
-        format: "%{attribute} %{message}"

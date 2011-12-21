@@ -1,23 +1,25 @@
+<h2>Locações</h2>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Cliente:</b>
-  <%= @locacao.cliente_id %>
+  <%= @locacao.cliente.nome %>
 </p>
 
 <p>
   <b>Funcionario:</b>
-  <%= @locacao.funcionario_id %>
+  <%= @locacao.funcionario.nome %>
 </p>
 
 <p>
   <b>Mesa:</b>
-  <%= @locacao.mesa_id %>
+  <%= @locacao.mesa.tipo_mesa.tipo %>
 </p>
 
 <p>
   <b>Valor ficha:</b>
-  <%= @locacao.valor_ficha_id %>
+  <%= @locacao.valor_ficha.preco %>
 </p>
 
 <p>
@@ -41,5 +43,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_locacao_path(@locacao) %> |
-<%= link_to 'Back', locacoes_path %>
+<%= link_to 'Editar', edit_locacao_path(@locacao) %> |
+<%= link_to 'Voltar', locacoes_path %>

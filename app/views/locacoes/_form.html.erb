@@ -13,19 +13,23 @@
 
   <div class="field">
     <%= f.label :cliente_id %><br />
-    <%= f.number_field :cliente_id %>
+    <%= f.collection_select(:cliente_id, Cliente.order(:nome),
+        :id, :nome, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :funcionario_id %><br />
-    <%= f.number_field :funcionario_id %>
+    <%= f.collection_select(:funcionario_id, Funcionario.order(:nome),
+        :id, :nome, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :mesa_id %><br />
-    <%= f.number_field :mesa_id %>
+    <%= f.collection_select(:mesa_id, Mesa.order(:tipo_mesa_id),
+        :id, :tipo_mesa_id, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :valor_ficha_id %><br />
-    <%= f.number_field :valor_ficha_id %>
+    <%= f.collection_select(:valor_ficha_id, ValorFicha.order(:preco),
+        :id, :preco, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :data_locacao %><br />
