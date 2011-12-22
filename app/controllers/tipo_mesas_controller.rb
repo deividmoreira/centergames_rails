@@ -79,4 +79,9 @@ class TipoMesasController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def search
+    @tipo_mesas = TipoMesa.find(params[:tipo_mesa])
+  end
+  
 end

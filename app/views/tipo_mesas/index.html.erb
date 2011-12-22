@@ -1,5 +1,14 @@
 <h2>Tipos de mesas</h2>
-<%= link_to 'Novo Tipo mesa', new_tipo_mesa_path, :class => 'link-button' %>
+<%= link_to 'Novo Tipo Mesa', new_tipo_mesa_path, :class => 'link-button' %>
+<fieldset>
+	<legend>Pesquisa</legend>
+	<%= form_tag :action => 'search' do %>
+		Tipo: <%= text_field :tipo %>
+  		<%= submit_tag 'Pesquisar' %>
+	<% end %>
+	
+	
+</fieldset>
 <table>
 	<thead>
 	  <tr>

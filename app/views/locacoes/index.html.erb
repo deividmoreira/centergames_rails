@@ -3,33 +3,37 @@
 <%= link_to 'Nova Locação', new_locacao_path, :class => 'link-button' %>
 
 <table>
-  <tr>
-    <th>Cliente</th>
-    <th>Funcionario</th>
-    <th>Mesa</th>
-    <th>Valor ficha</th>
-    <th>Data locacao</th>
-    <th>Lucro</th>
-    <th>Encerrada</th>
-    <th>Obs</th>
-    <th></th>
-  </tr>
-
-<% @locacoes.each do |locacao| %>
-  <tr>
-    <td><%= locacao.cliente.nome %></td>
-    <td><%= locacao.funcionario.nome %></td>
-    <td><%= locacao.mesa.tipo_mesa.tipo %></td>
-    <td><%= locacao.valor_ficha.preco %></td>
-    <td><%= locacao.data_locacao %></td>
-    <td><%= locacao.lucro %></td>
-    <td><%= locacao.encerrada %></td>
-    <td><%= locacao.obs %></td>
-    <td>
-        <%= link_to 'Mostrar', locacao %>
-        <%= link_to 'Editar', edit_locacao_path(locacao) %>
-        <%= link_to 'Excluir', locacao, confirm: 'Confirma exclusão?', method: :delete %>
-    </td>
-  </tr>
-<% end %>
+	<thead>
+	  <tr>
+	    <th>Cliente</th>
+	    <th>Funcionario</th>
+	    <th>Mesa</th>
+	    <th>Vlr ficha</th>
+	    <th>Data locacao</th>
+	    <th>Lucro</th>
+	    <th>Encerrada</th>
+	    <th>Obs</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>	
+		<% @locacoes.each do |locacao| %>
+		  <tr>
+		    <td><%= locacao.cliente.nome %></td>
+		    <td><%= locacao.funcionario.nome %></td>
+		    <td><%= locacao.mesa.tipo_mesa.tipo %></td>
+		    <td><%= locacao.valor_ficha.preco %></td>
+		    <td><%= locacao.data_locacao %></td>
+		    <td><%= locacao.lucro %></td>
+		    <td><%= locacao.encerrada %></td>
+		    <td><%= locacao.obs %></td>
+		    <td>
+		        <%= link_to 'Mostrar', locacao %>
+		        <%= link_to 'Editar', edit_locacao_path(locacao) %>
+		        <%= link_to 'Excluir', locacao, confirm: 'Confirma exclusão?', method: :delete %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
 </table>

@@ -12,7 +12,7 @@ Centergames::Application.routes.draw do
   resources :cargos
 
   resources :tipo_mesas
-
+  
   resources :relogios
 
   resources :mesas

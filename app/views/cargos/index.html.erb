@@ -1,21 +1,25 @@
 <h2>Cargos</h2>
 
 <table>
-  <tr>
-    <th>Nome</th>
-    <th></th>
-  </tr>
-
-<% @cargos.each do |cargo| %>
-  <tr>
-    <td><%= cargo.nome %></td>
-    <td>
-    	<%= link_to 'Mostrar', cargo %>
-    	<%= link_to 'Editar', edit_cargo_path(cargo) %>
-    	<%= link_to 'Excluir', cargo, confirm: 'Confirma exclusão?', method: :delete %>
-    </td>
-  </tr>
-<% end %>
+	<thead>
+	  <tr>
+	    <th>Nome</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @cargos.each do |cargo| %>
+		  <tr>
+		    <td><%= cargo.nome %></td>
+		    <td>
+		    	<%= link_to 'Mostrar', cargo %>
+		    	<%= link_to 'Editar', edit_cargo_path(cargo) %>
+		    	<%= link_to 'Excluir', cargo, confirm: 'Confirma exclusão?', method: :delete %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>	
 </table>
 
 <br />

@@ -1,29 +1,33 @@
 <h2>Clientes</h2>
 <%= link_to 'Novo Cliente', new_cliente_path, :class => 'link-button' %>
 <table>
-  <tr>
-    <th>Nome</th>
-    <th>Endereço</th>
-    <th>Rg</th>
-    <th>Orgao expedidor</th>
-    <th>Cpf</th>
-    <th>Irregular</th>
-    <th></th>
-  </tr>
-
-<% @clientes.each do |cliente| %>
-  <tr>
-    <td><%= cliente.nome %></td>
-    <td><%= cliente.endereco %></td>
-    <td><%= cliente.rg %></td>
-    <td><%= cliente.orgao_expedidor %></td>
-    <td><%= cliente.cpf %></td>
-    <td><%= cliente.irregular %></td>
-    <td>
-        <%= link_to 'Mostrar', cliente %>
-        <%= link_to 'Editar', edit_cliente_path(cliente) %>
-        <%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete %>
-    </td>
-  </tr>
-<% end %>
+	<thead>
+	  <tr>
+	    <th>Nome</th>
+	    <th>Endereço</th>
+	    <th>Rg</th>
+	    <th>Orgao expedidor</th>
+	    <th>Cpf</th>
+	    <th>Irregular</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @clientes.each do |cliente| %>
+		  <tr>
+		    <td><%= cliente.nome %></td>
+		    <td><%= cliente.endereco %></td>
+		    <td><%= cliente.rg %></td>
+		    <td><%= cliente.orgao_expedidor %></td>
+		    <td><%= cliente.cpf %></td>
+		    <td><%= cliente.irregular %></td>
+		    <td>
+		        <%= link_to 'Mostrar', cliente %>
+		        <%= link_to 'Editar', edit_cliente_path(cliente) %>
+		        <%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
 </table>

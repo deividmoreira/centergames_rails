@@ -3,23 +3,27 @@
 <%= link_to 'Nova Rota', new_rotum_path, :class => 'link-button' %>
 
 <table>
-  <tr>
-    <th>Rota</th>
-    <th>Ativo</th>
-    <th></th>
-  </tr>
-
-<% @rotas.each do |rota| %>
-  <tr>
-    <td><%= rotum.rota %></td>
-    <td><%= rotum.ativo %></td>
-    <td>
-    	<%= link_to 'Mostrar', rotum %>
-    	<%= link_to 'Editar', edit_rotum_path(rotum) %>
-    	<%= link_to 'Excluir', rotum, confirm: 'Are you sure?', method: :delete %>
-    </td>
-  </tr>
-<% end %>
+	<thead>
+	  <tr>
+	    <th>Rota</th>
+	    <th>Ativo</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @rotas.each do |rota| %>
+		  <tr>
+		    <td><%= rotum.rota %></td>
+		    <td><%= rotum.ativo %></td>
+		    <td>
+		    	<%= link_to 'Mostrar', rotum %>
+		    	<%= link_to 'Editar', edit_rotum_path(rotum) %>
+		    	<%= link_to 'Excluir', rotum, confirm: 'Are you sure?', method: :delete %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
 </table>
 
 <br />
