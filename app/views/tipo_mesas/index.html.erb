@@ -1,33 +1,15 @@
 <h2>Tipos de mesas</h2>
 <%= link_to 'Novo Tipo Mesa', new_tipo_mesa_path, :class => 'link-button' %>
-<fieldset>
-	<legend>Pesquisa</legend>
-	<%= form_tag :action => 'search' do %>
-		Tipo: <%= text_field :tipo %>
-  		<%= submit_tag 'Pesquisar' %>
-	<% end %>
-	
-	
-</fieldset>
-<table>
-	<thead>
-	  <tr>
-	    <th>Tipo</th>
-	    <th></th>
-	  </tr>
-	</thead>
-	<tfoot></tfoot>
-	<tbody>
-		<% @tipo_mesas.each do |tipo_mesa| %>
-		  <tr>
-		    <td><%= tipo_mesa.tipo %></td>
-		    <td>
-		    	<%= link_to 'Show', tipo_mesa %>
-		    	<%= link_to 'Edit', edit_tipo_mesa_path(tipo_mesa) %>
-		    	<%= link_to 'Destroy', tipo_mesa, confirm: 'Are you sure?', method: :delete %>
-		    </td>
-		  </tr>
-		<% end %>
-	</tbody>
-</table>
+<%=form_tag tipo_mesas_path, :method => 'get' do %>
+    <fieldset>
+        <legend>Pesquisa</legend>
+            Tipo: <%=search_field(:tipo_mesa, :tipo)%> 
+            <%= submit_tag 'Pesquisar' %>
+    </fieldset>
+    
+    <div id='div_lista'>
+        <%= render 'lista'%>    
+    </div>
+<%end%>
+
 <%= will_paginate @tipo_mesas %>

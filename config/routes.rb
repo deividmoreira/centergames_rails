@@ -1,4 +1,5 @@
 Centergames::Application.routes.draw do
+  
   resources :locacoes
 
   resources :clientes
@@ -10,12 +11,15 @@ Centergames::Application.routes.draw do
   resources :rota
 
   resources :cargos
-
+  
   resources :tipo_mesas
+  
+  match 'search', :controller => 'tipo_mesas', :action => 'search'
   
   resources :relogios
 
   resources :mesas
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

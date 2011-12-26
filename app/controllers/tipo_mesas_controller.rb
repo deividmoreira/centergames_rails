@@ -1,11 +1,17 @@
 class TipoMesasController < ApplicationController
   # GET /tipo_mesas
   # GET /tipo_mesas.json
+  
   def index
-    @tipo_mesas = TipoMesa.paginate :page => params[:page], :per_page => 10
+    if params.include? :tipo_mesa   
+      @tipo_mesas = TipoMesa.where("tipo like ?", "%#{params[:tipo_mesa][:tipo].upcase}%").paginate(:page => params[:page] , :per_page => 10).order(:tipo)
+    else 
+      @tipo_mesas = TipoMesa.paginate :page => params[:page], :per_page => 10      
+    end 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tipo_mesas }
+      format.js
     end
   end
 
@@ -51,6 +57,7 @@ class TipoMesasController < ApplicationController
       end
     end
   end
+  
 
   # PUT /tipo_mesas/1
   # PUT /tipo_mesas/1.json
@@ -78,10 +85,6 @@ class TipoMesasController < ApplicationController
       format.html { redirect_to tipo_mesas_url }
       format.json { head :ok }
     end
-  end
-  
-  def search
-    @tipo_mesas = TipoMesa.find(params[:tipo_mesa])
   end
   
 end
