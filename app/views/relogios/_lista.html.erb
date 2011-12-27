@@ -2,6 +2,8 @@
 	<thead>
 	  <tr>
 	    <th>Numero</th>
+	    <th>Valor Inicial</th>
+	    <th>Valor Final</th>
 	    <th></th>
 	  </tr>
 	</thead>
@@ -10,6 +12,8 @@
 		<% @relogios.each do |relogio| %>
 		  <tr>
 		    <td><%= relogio.numero %></td>
+		    <td><%= relogio.vlr_inicial %></td>
+		    <td><%= relogio.vlr_final %></td>
 		    <td>
 		    	<%= link_to 'Mostrar', relogio, :class => 'mostrar' %>
 		    	<%= link_to 'Editar', edit_relogio_path(relogio), :class => 'editar' %>

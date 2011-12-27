@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220193955) do
+ActiveRecord::Schema.define(:version => 20111227184515) do
 
   create_table "cargos", :force => true do |t|
     t.string   "nome"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(:version => 20111220193955) do
     t.string   "numero"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "vlr_inicial"
+    t.decimal  "vlr_final"
   end
 
   create_table "rota", :force => true do |t|
