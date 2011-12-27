@@ -2,11 +2,16 @@ class RelogiosController < ApplicationController
   # GET /relogios
   # GET /relogios.json
   def index
-    @relogios = Relogio.all
-
+    if params.include? :relogio   
+      @relogios = Relogio.where("numero like ?", "%#{params[:relogio][:numero].upcase}%")
+                                  .paginate(:page => params[:page] , :per_page => 10).order(:numero)
+    else 
+      @relogios = Relogio.paginate :page => params[:page], :per_page => 10      
+    end 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @relogios }
+      format.js
     end
   end
 

@@ -4,7 +4,8 @@ class TipoMesasController < ApplicationController
   
   def index
     if params.include? :tipo_mesa   
-      @tipo_mesas = TipoMesa.where("tipo like ?", "%#{params[:tipo_mesa][:tipo].upcase}%").paginate(:page => params[:page] , :per_page => 10).order(:tipo)
+      @tipo_mesas = TipoMesa.where("tipo like ?", "%#{params[:tipo_mesa][:tipo].upcase}%")
+                                  .paginate(:page => params[:page] , :per_page => 10).order(:tipo)
     else 
       @tipo_mesas = TipoMesa.paginate :page => params[:page], :per_page => 10      
     end 

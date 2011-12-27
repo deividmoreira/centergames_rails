@@ -1,0 +1,21 @@
+<table>
+	<thead>
+	  <tr>
+	    <th>Numero</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @relogios.each do |relogio| %>
+		  <tr>
+		    <td><%= relogio.numero %></td>
+		    <td>
+		    	<%= link_to 'Mostrar', relogio, :class => 'mostrar' %>
+		    	<%= link_to 'Editar', edit_relogio_path(relogio), :class => 'editar' %>
+		    	<%= link_to 'Excluir', relogio, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

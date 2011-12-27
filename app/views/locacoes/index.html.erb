@@ -1,6 +1,6 @@
 <h2>Locações</h2>
 
-<%= link_to 'Nova Locação', new_locacao_path, :class => 'link-button' %>
+<%= link_to 'Novo', new_locacao_path, :class => 'novo' %>
 
 <table>
 	<thead>
@@ -29,9 +29,9 @@
 		    <td><%= locacao.encerrada %></td>
 		    <td><%= locacao.obs %></td>
 		    <td>
-		        <%= link_to 'Mostrar', locacao %>
-		        <%= link_to 'Editar', edit_locacao_path(locacao) %>
-		        <%= link_to 'Excluir', locacao, confirm: 'Confirma exclusão?', method: :delete %>
+		        <%= link_to 'Mostrar', locacao, :class => 'mostrar' %>
+		        <%= link_to 'Editar', edit_locacao_path(locacao), :class => 'editar' %>
+		        <%= link_to 'Excluir', locacao, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
 		    </td>
 		  </tr>
 		<% end %>

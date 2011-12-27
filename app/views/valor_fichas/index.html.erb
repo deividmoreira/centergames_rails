@@ -1,29 +1,16 @@
 <h2>Valor das fichas</h2>
+<%= link_to 'Novo', new_valor_ficha_path, :class => 'novo' %>
+<%=form_tag valor_fichas_path, :method => 'get' do %>
+    <fieldset>
+        <legend>Pesquisa</legend>
+            Descricao: <%=search_field(:valor_ficha, :descricao)%>
+            Preço: <%=search_field(:valor_ficha, :preco)%>
+            <%= submit_tag 'Pesquisar' %>
+    </fieldset>
+    
+    <div id='div_lista'>
+        <%= render 'lista'%>    
+    </div>
+<%end%>
 
-<table>
-	<thead>	
-	  <tr>
-	    <th>Descricao</th>
-	    <th>Preco</th>
-	    <th></th>
-	  </tr>
-	</thead>
-	<tfoot></tfoot>>
-	<tbody>
-		<% @valor_fichas.each do |valor_ficha| %>
-		  <tr>
-		    <td><%= valor_ficha.descricao %></td>
-		    <td><%= valor_ficha.preco %></td>
-		    <td>
-		    	<%= link_to 'Mostrar', valor_ficha %>
-		    	<%= link_to 'Editar', edit_valor_ficha_path(valor_ficha) %>
-		    	<%= link_to 'Excluir', valor_ficha, confirm: 'Confirma exclusão?', method: :delete %>
-		    </td>
-		  </tr>
-		<% end %>
-	</tbody>
-</table>
 
-<br />
-
-<%= link_to 'New Valor ficha', new_valor_ficha_path %>

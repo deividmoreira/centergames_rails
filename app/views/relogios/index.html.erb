@@ -1,23 +1,17 @@
 <h2>Relógios</h2>
-<%= link_to 'Novo Relogio', new_relogio_path, :class => 'link-button' %>
-<table>
-	<thead>
-	  <tr>
-	    <th>Numero</th>
-	    <th></th>
-	  </tr>
-	</thead>
-	<tfoot></tfoot>
-	<tbody>
-		<% @relogios.each do |relogio| %>
-		  <tr>
-		    <td><%= relogio.numero %></td>
-		    <td>
-		    	<%= link_to 'Show', relogio %>
-		    	<%= link_to 'Edit', edit_relogio_path(relogio) %>
-		    	<%= link_to 'Destroy', relogio, confirm: 'Are you sure?', method: :delete %>
-		    </td>
-		  </tr>
-		<% end %>
-	</tbody>
-</table>
+<%= link_to 'Novo', new_relogio_path, :class => 'novo' %>
+
+<%=form_tag relogios_path, :method => 'get' do %>
+    <fieldset>
+        <legend>Pesquisa</legend>
+            Número: <%=search_field(:relogio, :numero)%>
+             
+            <%= submit_tag 'Pesquisar' %>
+    </fieldset>
+    
+    <div id='div_lista'>
+        <%= render 'lista'%>    
+    </div>
+<%end%>
+
+<%= will_paginate @relogios %>

@@ -1,5 +1,5 @@
 <h2>Funcionários</h2>
-<%= link_to 'Novo Funcionário', new_funcionario_path, :class => 'link-button' %>
+<%= link_to 'Novo', new_funcionario_path, :class => 'novo' %>
 <table>
 	<thead>
 	  <tr>
@@ -19,9 +19,9 @@
 		    <td><%= funcionario.cargo.nome %></td>
 		    <td><%= funcionario.percentual_gratificacao %></td>
 		    <td>
-		    	<%= link_to 'Mostrar', funcionario %>
-		    	<%= link_to 'Editar', edit_funcionario_path(funcionario) %>
-		    	<%= link_to 'Excluir', funcionario, confirm: 'Confirma exclusão?', method: :delete %>
+		    	<%= link_to 'Mostrar', funcionario, :class => 'mostrar' %>
+		    	<%= link_to 'Editar', edit_funcionario_path(funcionario), :class => 'editar' %>
+		    	<%= link_to 'Excluir', funcionario, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
 		    </td>
 		  </tr>
 		<% end %>

@@ -314,3 +314,44 @@ a:hover{
     border-color: #555;
     background: #f2f2f2;
 }
+
+.novo {
+	background: url(add.png) no-repeat 0% 50%;
+	float: right;
+	padding: 9px 17px;
+	margin-bottom: -20px;
+    margin-top: -15px;
+}
+
+.mostrar{
+	background: url(zoom.png) no-repeat 0% 50%;
+	display: inline-table;
+	text-align:center;
+	width: 2.5em;
+	height: 1.5em;
+	text-indent: -9999px;
+	overflow: hidden;
+	border: none;	
+}
+
+.editar{
+	background: url(pencil.png) no-repeat 0% 50%;
+	display: inline-table;
+	text-align:center;
+	width: 2.5em;
+	height: 1.5em;
+	text-indent: -9999px;
+	overflow: hidden;
+	border: none;
+}
+
+.excluir{
+	background: url(cross.png) no-repeat 0% 50%;
+	display: inline-table;
+	text-align:center;
+	width: 2.5em;
+	height: 1.5em;
+	text-indent: -9999px;
+	overflow: hidden;
+	border: none;	
+}

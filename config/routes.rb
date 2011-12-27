@@ -14,8 +14,6 @@ Centergames::Application.routes.draw do
   
   resources :tipo_mesas
   
-  match 'search', :controller => 'tipo_mesas', :action => 'search'
-  
   resources :relogios
 
   resources :mesas

@@ -1,5 +1,5 @@
 <h2>Mesas</h2>
-<%= link_to 'Nova Mesa', new_mesa_path, :class => 'link-button'%>
+<%= link_to 'Novo', new_mesa_path, :class => 'novo'%>
 <table>
 <thead>    
   <tr>
@@ -23,9 +23,9 @@
         <td><%= mesa.motivo_inatividade %></td>
         <td><%= mesa.obs %></td>
         <td>
-            <%= link_to 'Mostrar', mesa %>
-            <%= link_to 'Editar', edit_mesa_path(mesa) %>
-            <%= link_to 'Excluir', mesa, confirm: 'Confirma exclusão?', method: :delete %>
+            <%= link_to 'Mostrar', mesa, :class => 'mostrar' %>
+            <%= link_to 'Editar', edit_mesa_path(mesa), :class => 'editar' %>
+            <%= link_to 'Excluir', mesa, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
         </td>
       </tr>
     <% end %>

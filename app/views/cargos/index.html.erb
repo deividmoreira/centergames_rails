@@ -1,5 +1,5 @@
 <h2>Cargos</h2>
-
+<%= link_to 'Novo', new_cargo_path, :class => 'novo' %>
 <table>
 	<thead>
 	  <tr>
@@ -13,15 +13,11 @@
 		  <tr>
 		    <td><%= cargo.nome %></td>
 		    <td>
-		    	<%= link_to 'Mostrar', cargo %>
-		    	<%= link_to 'Editar', edit_cargo_path(cargo) %>
-		    	<%= link_to 'Excluir', cargo, confirm: 'Confirma exclusão?', method: :delete %>
+		    	<%= link_to 'Mostrar', cargo, :class => 'mostrar' %>
+		    	<%= link_to 'Editar', edit_cargo_path(cargo), :class => 'editar' %>
+		    	<%= link_to 'Excluir', cargo, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
 		    </td>
 		  </tr>
 		<% end %>
 	</tbody>	
 </table>
-
-<br />
-
-<%= link_to 'New Cargo', new_cargo_path %>

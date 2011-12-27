@@ -1,5 +1,5 @@
 <h2>Clientes</h2>
-<%= link_to 'Novo Cliente', new_cliente_path, :class => 'link-button' %>
+<%= link_to 'Novo', new_cliente_path, :class => 'novo' %>
 <table>
 	<thead>
 	  <tr>
@@ -23,9 +23,9 @@
 		    <td><%= cliente.cpf %></td>
 		    <td><%= cliente.irregular %></td>
 		    <td>
-		        <%= link_to 'Mostrar', cliente %>
-		        <%= link_to 'Editar', edit_cliente_path(cliente) %>
-		        <%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete %>
+		        <%= link_to 'Mostrar', cliente, :class => 'mostrar' %>
+		        <%= link_to 'Editar', edit_cliente_path(cliente), :class => 'editar' %>
+		        <%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
 		    </td>
 		  </tr>
 		<% end %>

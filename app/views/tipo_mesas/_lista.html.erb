@@ -11,9 +11,9 @@
           <tr>
             <td><%= tipo_mesa.tipo %></td>
             <td>
-                <%= link_to 'Mostrar', tipo_mesa %>
-                <%= link_to 'Editar', edit_tipo_mesa_path(tipo_mesa) %>
-                <%= link_to 'Excluir', tipo_mesa, confirm: 'Deseja realmente excluir?', method: :delete %>
+                <%= link_to 'Mostrar', tipo_mesa, :class => 'mostrar' %>
+                <%= link_to 'Editar', edit_tipo_mesa_path(tipo_mesa), :class => 'editar' %>
+                <%= link_to 'Excluir', tipo_mesa, :class => 'excluir', confirm: 'Deseja realmente excluir?', method: :delete %>
             </td>
           </tr>
         <% end %>

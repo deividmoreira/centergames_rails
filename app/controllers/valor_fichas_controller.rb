@@ -2,11 +2,18 @@ class ValorFichasController < ApplicationController
   # GET /valor_fichas
   # GET /valor_fichas.json
   def index
-    @valor_fichas = ValorFicha.all
+    if params.include? :valor_ficha
+      @valor_fichas = ValorFicha.where("descricao like ? ","%#{params[:valor_ficha][:descricao].upcase}%")
+                                                              .paginate(:page => params[:page] , :per_page => 10).order(:descricao)
+    else 
+      @valor_fichas = ValorFicha.all
+      #.paginate :page => params[:page], :per_page => 10      
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @valor_fichas }
+      format.js
     end
   end
 

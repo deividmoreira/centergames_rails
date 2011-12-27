@@ -1,0 +1,21 @@
+<table>
+	<thead>
+	  <tr>
+	    <th>Rota</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tfoot></tfoot>
+	<tbody>
+		<% @rotas.each do |rota| %>
+		  <tr>
+		    <td><%= rota.nome %></td>
+		    <td>
+		    	<%= link_to 'Mostrar', rota, :class => 'mostrar' %>
+		    	<%= link_to 'Editar', edit_rotum_path(rota), :class => 'editar' %>
+		    	<%= link_to 'Excluir', rota, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
+		    </td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
