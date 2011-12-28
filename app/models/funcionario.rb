@@ -1,4 +1,4 @@
-class Funcionario < ActiveRecord::Base
+class Funcionario < ModelBase
   belongs_to :rota
   belongs_to :cargo
   
@@ -12,4 +12,5 @@ class Funcionario < ActiveRecord::Base
   
   validates_uniqueness_of :cpf
   
+  before_save :uppercase_fields
 end

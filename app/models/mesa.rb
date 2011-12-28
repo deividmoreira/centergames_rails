@@ -1,4 +1,4 @@
-class Mesa < ActiveRecord::Base
+class Mesa < ModelBase
   belongs_to :relogio
   belongs_to :tipo_mesa
   
@@ -8,4 +8,6 @@ class Mesa < ActiveRecord::Base
   validates_associated :tipo_mesa
   validates_presence_of :tipo_mesa_id
   validates_presence_of :relogio_id
+  
+  before_save :uppercase_fields
 end
