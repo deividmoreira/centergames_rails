@@ -3,7 +3,7 @@ class RotaController < ApplicationController
   # GET /rota.json
   def index
     if params.include? :rota   
-      @rotas = Rota.where("nome like ?", "%#{params[:rota][:nome].upcase}%")
+      @rotas = Rota.where("nome like %?%", "#{params[:rota][:nome].upcase}")
                                   .paginate(:page => params[:page] , :per_page => 10).order(:nome)
     else 
       @rotas = Rota.paginate :page => params[:page], :per_page => 10      

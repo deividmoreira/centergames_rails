@@ -1,13 +1,24 @@
 class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
+  
   def index
-    @clientes = Cliente.all
-
+    if params.include? :cliente   
+       @clientes = Cliente.where("nome like ? and endereco like ? and rg like ?", 
+                                  "%#{params[:cliente][:nome].upcase}%",
+                                  "%#{params[:cliente][:endereco].upcase}%",
+                                  "%#{params[:cliente][:rg].upcase}%"
+                                   ).paginate(:page => params[:page] , :per_page => 10).order(:created_at)
+    else 
+      @clientes = Cliente.order('created_at desc').paginate :page => params[:page], :per_page => 10      
+    end 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clientes }
+      format.js
     end
+    
   end
 
   # GET /clientes/1

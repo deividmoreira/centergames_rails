@@ -1,0 +1,31 @@
+<table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Rg</th>
+        <th>Orgao expedidor</th>
+        <th>Cpf</th>
+        <th>Irregular</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tfoot></tfoot>
+    <tbody>
+        <% @clientes.each do |cliente| %>
+          <tr>
+            <td><%= cliente.nome %></td>
+            <td><%= cliente.endereco %></td>
+            <td><%= cliente.rg %></td>
+            <td><%= cliente.orgao_expedidor %></td>
+            <td><%= cliente.cpf %></td>
+            <td><%= cliente.irregular %></td>
+            <td>
+                <%= link_to 'Mostrar', cliente, :class => 'mostrar' %>
+                <%= link_to 'Editar', edit_cliente_path(cliente), :class => 'editar' %>
+                <%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>

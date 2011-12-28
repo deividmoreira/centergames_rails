@@ -3,8 +3,7 @@ class ModelBase < ActiveRecord::Base
   
   def uppercase_fields
     attributes.each_value do |value| 
-      if (value != nil && 
-                value.class == 'String') 
+      if (value != nil && value.kind_of?(String)) 
         value.upcase!
       end
     end

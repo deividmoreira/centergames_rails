@@ -1,37 +1,23 @@
 <h2>Mesas</h2>
 <%= link_to 'Novo', new_mesa_path, :class => 'novo'%>
-<table>
-<thead>    
-  <tr>
-    <th>Relógio</th>
-    <th>Tipo de mesa</th>
-    <th>Data de cadastro</th>
-    <th>Mesa inativa</th>
-    <th>Motivo inatividade</th>
-    <th>Observações</th>
-    <th></th>
-  </tr>
-</thead>  
-<tfoot></tfoot>
-<tbody>
-    <% @mesas.each do |mesa| %>
-      <tr>
-        <td><%= mesa.relogio.numero %></td>
-        <td><%= mesa.tipo_mesa.tipo %></td>
-        <td><%= mesa.created_at %></td>
-        <td><%= mesa.mesa_inativa %></td>
-        <td><%= mesa.motivo_inatividade %></td>
-        <td><%= mesa.obs %></td>
-        <td>
-            <%= link_to 'Mostrar', mesa, :class => 'mostrar' %>
-            <%= link_to 'Editar', edit_mesa_path(mesa), :class => 'editar' %>
-            <%= link_to 'Excluir', mesa, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
-        </td>
-      </tr>
-    <% end %>
-</tbody>
-</table>
 
+<%=form_tag mesas_path, :method => 'get' do %>
+    <fieldset>
+        <legend>Pesquisa</legend>
+            Relógio: <%= collection_select(:mesa, :relogio_id, Relogio.all, :id, :numero, {:prompt => true}) %>
+            Tipo de Mesa: <%= collection_select(:tipo_mesa, :tipo_mesa_id, TipoMesa.all, :id, :tipo, {:prompt => true}) %>
+            Data de Cadastro: <%=search_field(:mesa, :data_cadastro)%>
+            Mesa Inativa: <%=check_box_tag(:inativa)%>
+
+            <%= submit_tag 'Pesquisar' %>
+    </fieldset>
+    
+    <div id='div_lista'>
+        <%= render 'lista'%>    
+    </div>
+<%end%>
+
+<%= will_paginate @mesas %>
 
 
 
