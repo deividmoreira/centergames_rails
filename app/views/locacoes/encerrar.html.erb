@@ -1,0 +1,9 @@
+<h2>Locações</h2>
+
+<div class="field">
+    Funcionario: <%= collection_select(:locacao, :funcionario_id, Funcionario.all, :id, :nome, {:prompt => true}) %>
+    Rota: <%= collection_select(:funcionario, :rota_id, Rota.all, :id, :nome, {:prompt => true}) %>
+    
+    <%= submit_tag 'Pesquisar' %>
+    
+</div>

@@ -2,20 +2,23 @@ class MesasController < ApplicationController
   # GET /mesas
   # GET /mesas.json
   def index
+=begin    
     if params.include? :mesa
-      where = params[:mesa][:relogio_id].empty? ? " " : ' relogio_id = ?'
-      where << params[:mesa][:tipo_mesa_id].empty? ? " " : ' and tipo_mesa_id = ?'     
-       @mesas = Mesa.where(where,
+      where = params[:mesa][:relogio_id] != nil ? ' relogio_id = ?' : nil
+      conditions = params[:mesa][:relogio_id] != nil ? params[:mesa][:relogio_id] : nil
+      where << params[:mesa][:tipo_mesa_id] != nil ? ' and tipo_mesa_id = ?' : nil
+      conditions << params[:mesa][:tipo_mesa_id] != nil ? params[:mesa][:tipo_mesa_id] : nil
+      
+      @mesas = Mesa.where(where, conditions
        #"relogio_id = ? or tipo_mesa_id = ? or created_at = ?", 
-                                  params[:mesa][:relogio_id],
-                                  params[:mesa][:tipo_mesa_id]
+                                  
+                                  
                                  # params[:mesa][:data_cadastro].empty? ? nil : params[:mesa][:data_cadastro]  
                                    ).paginate(:page => params[:page] , :per_page => 10).order('created_at desc')
-    else 
+=end    else 
       @mesas = Mesa.order('created_at desc').paginate :page => params[:page], :per_page => 10      
-    end 
+#    end 
     
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @mesas }

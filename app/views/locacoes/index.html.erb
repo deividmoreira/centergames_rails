@@ -1,39 +1,21 @@
 <h2>Locações</h2>
 
+<%= link_to 'Encerrar', :encerrar, :class => 'encerrar' %>
+
 <%= link_to 'Novo', new_locacao_path, :class => 'novo' %>
 
-<table>
-	<thead>
-	  <tr>
-	    <th>Cliente</th>
-	    <th>Funcionario</th>
-	    <th>Mesa</th>
-	    <th>Vlr ficha</th>
-	    <th>Data locacao</th>
-	    <th>Lucro</th>
-	    <th>Encerrada</th>
-	    <th>Obs</th>
-	    <th></th>
-	  </tr>
-	</thead>
-	<tfoot></tfoot>
-	<tbody>	
-		<% @locacoes.each do |locacao| %>
-		  <tr>
-		    <td><%= locacao.cliente.nome %></td>
-		    <td><%= locacao.funcionario.nome %></td>
-		    <td><%= locacao.mesa.tipo_mesa.tipo %></td>
-		    <td><%= locacao.valor_ficha.preco %></td>
-		    <td><%= locacao.data_locacao %></td>
-		    <td><%= locacao.lucro %></td>
-		    <td><%= locacao.encerrada %></td>
-		    <td><%= locacao.obs %></td>
-		    <td>
-		        <%= link_to 'Mostrar', locacao, :class => 'mostrar' %>
-		        <%= link_to 'Editar', edit_locacao_path(locacao), :class => 'editar' %>
-		        <%= link_to 'Excluir', locacao, confirm: 'Confirma exclusão?', method: :delete, :class => 'excluir' %>
-		    </td>
-		  </tr>
-		<% end %>
-	</tbody>
-</table>
+<%=form_tag locacoes_path, :method => 'get' do %>
+    <fieldset>
+        <legend>Pesquisa</legend>
+            Cliente: <%= collection_select(:locacao, :cliente_id, Cliente.all, :id, :nome, {:prompt => true}) %>
+            Funcionario: <%= collection_select(:locacao, :funcionario_id, Funcionario.all, :id, :nome, {:prompt => true}) %>
+
+            <%= submit_tag 'Pesquisar' %>
+    </fieldset>
+    
+    <div id='div_lista'>
+        <%= render 'lista'%>    
+    </div>
+<%end%>
+
+<%= will_paginate @mesas %>

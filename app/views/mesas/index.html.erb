@@ -5,7 +5,7 @@
     <fieldset>
         <legend>Pesquisa</legend>
             Relógio: <%= collection_select(:mesa, :relogio_id, Relogio.all, :id, :numero, {:prompt => true}) %>
-            Tipo de Mesa: <%= collection_select(:tipo_mesa, :tipo_mesa_id, TipoMesa.all, :id, :tipo, {:prompt => true}) %>
+            Tipo de Mesa: <%= collection_select(:mesa, :tipo_mesa_id, TipoMesa.all, :id, :tipo, {:prompt => true}) %>
             Data de Cadastro: <%=search_field(:mesa, :data_cadastro)%>
             Mesa Inativa: <%=check_box_tag(:inativa)%>
 

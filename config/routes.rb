@@ -1,4 +1,6 @@
 Centergames::Application.routes.draw do
+
+  root :to => 'locacoes#index'
   
   resources :locacoes
 
@@ -17,6 +19,9 @@ Centergames::Application.routes.draw do
   resources :relogios
 
   resources :mesas
+  
+  match "encerrar", controller: "locacoes", action: "encerrar"
+   
 
 
   # The priority is based upon order of creation:

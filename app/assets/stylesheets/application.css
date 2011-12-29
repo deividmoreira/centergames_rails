@@ -323,6 +323,14 @@ a:hover{
     margin-top: -15px;
 }
 
+.encerrar{
+    background: url(calculator_edit.png) no-repeat 0% 50%;
+    float: right;
+    padding: 9px 17px;
+    margin-bottom: -20px;
+    margin-top: -15px;   
+}
+
 .mostrar{
 	background: url(zoom.png) no-repeat 0% 50%;
 	display: inline-table;
@@ -355,3 +363,7 @@ a:hover{
 	overflow: hidden;
 	border: none;	
 }
+
+
+
+
